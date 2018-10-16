@@ -1,0 +1,42 @@
+{
+    "appenders":{
+        "users":{
+            "type":"file",
+            "filename":"logs/users.log"},
+            "access":{
+                "type":"dateFile",
+                "filename":"logs/access.log",
+                "pattern":"-yyyy-MM-dd",
+                "maxLogSize":1024,
+                "category":"http"
+            },
+            "app":{
+                "type":"file",
+                "filename":"logs/app.log",
+                "pattern":"-yyyy-MM-dd",
+                "maxLogSize":1024,
+                "numbackups":3
+            },
+            "errorFile":{
+                "type":"file",
+                "filename":"logs/error.log"
+               
+            },
+            "error":{
+                "type":"logLevelFilter",
+                "appender":"errorFile",
+                "level":"ERROR"
+               
+            }
+        },
+    "categories":{
+        "default":{
+            "appenders":["users","app","error"],
+            "level":"DEBUG" },
+        "http":{
+            "appenders":["access"],"level":"TRACE"
+        }
+        
+        }
+
+}

@@ -1,0 +1,5 @@
+[2018-10-16T16:37:47.163] [INFO] startUpLogger - Server Now with Logger on PORT :3000
+[2018-10-16T16:37:47.165] [INFO] startUpLogger - Server Now WIth Logger on http://127.0.0.1:3000
+[2018-10-16T16:37:55.325] [INFO] access - Hit GET /api/users
+[2018-10-16T16:55:21.225] [INFO] startUpLogger - Server Now with Logger on PORT :3000
+[2018-10-16T16:55:21.226] [INFO] startUpLogger - Server Now WIth Logger on http://127.0.0.1:3000
