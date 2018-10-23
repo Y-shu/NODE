@@ -28,11 +28,25 @@ module.exports.isUndefined = (undefValue)=>{
         return false;
     }
 }
-
+//type validation
 module.exports.isString = (stringValue)=>{
-    if(stringValue == "yashu"){
+    if(typeof stringValue == "yashu"){
         return true;
     }else{
         return false;
     }
 }
+// module.exports.isNumber = (numValue)=>{
+//     if(typeof numValue == 'number'){
+//         return true;
+//     }else{
+//         return false;
+//     }
+// }
+// module.exports.getData = (value)=>{
+//     if (typeof value == ' '){
+//         return true;
+//     }else{
+//         return false;
+//     }
+// }
