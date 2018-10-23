@@ -21,16 +21,16 @@ app.use(function(req,res,next){
     res.header("Access-Control-Allow-Headers","Origin,X-Requested-With, Content-Type,x-access-token, Accept");
     next();
     });
-try{
-    require('fs').mkdirSync('./log');
+// try{
+//     require('fs').mkdirSync('./log');
 
-}catch(error){
-    if(error.code !='EXIST'){
-        console.error("Could not setup a log directory.",error);
-        process.exit(1);
+// }catch(error){
+//     if(error.code !='EXIST'){
+//         console.error("Could not setup a log directory.",error);
+//         process.exit(1);
         
-    }
-}
+//     }
+// }
 app.use(express.static(path.join(__dirname,'public')));
 app.use(log4js.connectLogger(log4js.getLogger('http'),{level:'auto'}))
 app.use(function(req,res,next){

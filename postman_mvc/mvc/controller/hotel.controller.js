@@ -126,7 +126,7 @@ module.exports.updateOneHotel = (req,res,next) =>{
   try{
     console.log("Update One Hotel");
    var hotelId = req.params.hotelId;
-  var updateQuery ={$set :{"name":req.body.name} }
+  var updateQuery ={$push :{"reviews":req.body.reviews} }
   //findByIdAndUpdate is default method
   Hotel
     .findByIdAndUpdate(hotelId,updateQuery,function(error,response){
