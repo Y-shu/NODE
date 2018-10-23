@@ -1,5 +1,9 @@
+
 var valid = require('../mvc/utils/validation.util');
-var assert = require('assert');
+// var assert = require('assert');
+//now assertion library are from chai...
+var assert = require('chai').assert;
+
 
 describe("Validation for Empty",()=>{
    it("Is Empty Validation Happy Flow",()=>{
@@ -47,3 +51,5 @@ describe("Validation for String",()=>{
         assert.equal(false,valid.isString(1234));
     });
 });
+
+
