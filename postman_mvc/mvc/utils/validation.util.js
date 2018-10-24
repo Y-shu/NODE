@@ -36,17 +36,18 @@ module.exports.isString = (stringValue)=>{
         return false;
     }
 }
-// module.exports.isNumber = (numValue)=>{
-//     if(typeof numValue == 'number'){
-//         return true;
-//     }else{
-//         return false;
-//     }
-// }
-// module.exports.getData = (value)=>{
-//     if (typeof value == ' '){
-//         return true;
-//     }else{
-//         return false;
-//     }
-// }
+
+module.exports.getData = (value)=>{
+    if (typeof value == ' '){
+        return true;
+    }else{
+        return false;
+    }
+}
+module.exports.isNumber = (value)=>{
+    if(value == 'number'){
+        return true;
+    }else{
+        return false;
+    }
+}

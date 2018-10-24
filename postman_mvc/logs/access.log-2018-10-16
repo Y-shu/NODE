@@ -1,0 +1,1 @@
+[2018-10-16T16:37:55.737] [INFO] http - 127.0.0.1 - - "GET /api/users HTTP/1.1" 200 1316 "" "PostmanRuntime/7.3.0"

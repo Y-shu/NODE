@@ -38,7 +38,7 @@ app.use(function(req,res,next){
     next();
 })
     app.use('/api',userRoutes);
-    app.use('/api',hotelRoutes);
+    app.use('/api/api',hotelRoutes);
     
     console.log("I am Last Statement of Server File!");
     

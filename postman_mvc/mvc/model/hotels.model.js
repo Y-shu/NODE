@@ -51,5 +51,5 @@ var hotelSchema = mongoose.Schema({
  
 })
 //creating model object 
-mongoose.model('Hotel',hotelSchema,'hotel');
+module.exports=mongoose.model('Hotel',hotelSchema,'hotel');
 //model object internally search for mongoose connection...
