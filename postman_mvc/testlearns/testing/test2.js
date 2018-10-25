@@ -1,18 +1,18 @@
 var expect = require('chai').expect;
 var assert = require('chai').assert;
-var valid = require('../mvc/utils/validation.util');
+var valid = require('../../mvc/utils/validation.util');
 
 describe("Validation Using Expect Happy Flow!",()=>{
 
     it('Yashu is a string! Happy Flow!',()=>{
        expect(valid.getData('yashu')).to.be.string;
          });
-    // it('Hello is also a string! Happy flow',()=>{
-    //     expect(valid.getData('hello')).to.be.a('string');
-    // });
-    // it('Value 40 is a Number! Happy Flow!',()=>{
-    //     expect(valid.isNumber(40)).to.be.a('number');
-    // });
+    it('Hello is also a string! Happy flow',()=>{
+        expect(valid.getData('hello')).to.be.a('string');
+    });
+    it('Value 40 is a Number! Happy Flow!',()=>{
+        expect(valid.isNumber(40)).equal(true);
+    });
     
 });
 

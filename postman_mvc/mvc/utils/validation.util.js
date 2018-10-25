@@ -38,14 +38,10 @@ module.exports.isString = (stringValue)=>{
 }
 
 module.exports.getData = (value)=>{
-    if (typeof value == ' '){
-        return true;
-    }else{
-        return false;
-    }
+   return value;
 }
 module.exports.isNumber = (value)=>{
-    if(value == 'number'){
+    if(typeof value == 'number'){
         return true;
     }else{
         return false;

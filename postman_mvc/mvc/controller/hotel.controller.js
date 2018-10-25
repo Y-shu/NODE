@@ -93,7 +93,7 @@ module.exports.addOneHotel = (req,res,next) =>{
 if(req.body && req.body.name && req.body.stars && req.body.description){
       var newhotel = new Hotel({
         name:req.body.name,
-        stars:req.body.starts,
+        stars:req.body.stars,
         'location.address':req.body.address,
         currency:req.body.currency,
         services:req.body.services
@@ -112,13 +112,14 @@ if(req.body && req.body.name && req.body.stars && req.body.description){
         .json(response)
       }
   })
-}else{
-    res
-    .status(200)
-    .json({
-      message : "Required fields for creating hotel is missing!",
-    });
-  }
+}
+// }else{
+//     res
+//     .status(200)
+//     .json({
+//       message : "Required fields for creating hotel is missing!"
+//     });
+//   }
 }
 
 //update hotel name or whole data or nested data.

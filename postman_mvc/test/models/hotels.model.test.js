@@ -3,6 +3,8 @@ var expect = chai.expect;
 var Hotel=require('../../mvc/model/hotels.model');
 
 describe('Hotels Model Happy Test Flow!',()=>{
+            //generating hotel object for model
+
     var hotel = new Hotel({
         name:"Hotel Grand Casino",
         stars:5,
@@ -17,7 +19,6 @@ describe('Hotels Model Happy Test Flow!',()=>{
 
    });
         it('Test For Hotel Model Data',()=>{
-            //generating hotel object for model
                 expect(hotel).to.have.property('name').to.equal('Hotel Grand Casino');
                 expect(hotel).to.have.property('stars').to.equal(5);
                 expect(hotel).to.have.property('description').to.equal('Best Hotel In BanjaraHills');
