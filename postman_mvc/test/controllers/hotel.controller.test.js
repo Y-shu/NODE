@@ -24,6 +24,7 @@ describe('GET Hotels Controller Test',()=>{
         //    console.log(res.body);
         res.body.should.be.a('array');
         res.type.should.equal('application/json');
+
         res.body[0].should.have.property('_id');
         res.body[0].should.have.property('name');
         res.body[0].should.have.property('stars');
@@ -72,22 +73,31 @@ describe('GET Hotels Controller Test',()=>{
                    
                 });
         });
-        // it('GET/ Updated Hotel! Happy Flow!',()=>{
-        //     var hotel= {name:'sam taj',stars:5,reviews:'Good'},
-        // var hotelId;
+        it('GET/ Updated Hotel! Happy Flow!',()=>{
+            var hotel= {name:'sam taj',stars:5,reviews:'Good'}
+            chai.request('http://127.0.0.1:3000/api/api')
+            .put('/hotel/5bbd3b3519f31d285e560691')
+            .send({'name':'sam taj'},{'stars':5},{'reviews':'Good'})
+            .end((error,res)=>{
+                console.log(res.body);
+                // var hotelId = res.body._id;
+                res.should.be.json;
+                res.should.have.status(200);
+                res.body.should.be.a('object');
+                res.type.should.equal('application/json');
+                expect(res.body).to.have.a.property(name).to.equal('sam taj');
+                expect(res.body).to.have.a.property(stars).to.equal(5);
+                expect(res.body).to.have.a.property(reviews).to.equal('Good');
+            });
+        });
+        // it('Delete One Hotel Happy Flow',(done)=>{
         //     chai.request('http://127.0.0.1:3000/api/api')
-        //     .put('/hotel/'+hotelId)
-        //     .send(hotel)
-        //     .end((error,res)=>{
+        //       .delete('/hotel/5bbd3b3519f31d285e560691')
+        //       .end((err, res)=>{
         //         console.log(res.body);
-        //         var hotelId = res.body._id;
-        //         res.should.be.json;
         //         res.should.have.status(200);
         //         res.body.should.be.a('object');
-        //         res.type.should.equal('application/json');
-        //         expect(res.body).to.have.a.property(name).to.equal('sam taj');
-        //         expect(res.body).to.have.a.property(stars).to.equal(5);
-        //         expect(res.body).to.have.a.property(reviews).to.equal('Good');
-        //     })
-        // })
+        //         done();
+        //   });
+        // });
     });

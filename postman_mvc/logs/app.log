@@ -1,13 +1,10 @@
-[2018-10-25T14:22:16.749] [INFO] access - Hit PUT /api/api/hotel/undefined
-[2018-10-25T14:23:20.727] [INFO] startUpLogger - Server Now with Logger on PORT :3000
-[2018-10-25T14:23:20.728] [INFO] startUpLogger - Server Now WIth Logger on http://127.0.0.1:3000
-[2018-10-25T14:23:20.743] [INFO] access - Hit GET /api/api/hotels
-[2018-10-25T14:23:20.752] [INFO] access - Hit GET /api/api/hotel/5bbd3b3519f31d285e560691
-[2018-10-25T14:23:20.775] [INFO] access - Hit POST /api/api/hotel/new
-[2018-10-25T14:23:20.778] [INFO] access - Hit PUT /api/api/hotel/undefined
-[2018-10-25T14:24:01.626] [INFO] startUpLogger - Server Now with Logger on PORT :3000
-[2018-10-25T14:24:01.627] [INFO] startUpLogger - Server Now WIth Logger on http://127.0.0.1:3000
-[2018-10-25T14:24:01.646] [INFO] access - Hit GET /api/api/hotels
-[2018-10-25T14:24:01.657] [INFO] access - Hit GET /api/api/hotel/5bbd3b3519f31d285e560691
-[2018-10-25T14:24:01.684] [INFO] access - Hit POST /api/api/hotel/new
-[2018-10-25T14:24:01.686] [INFO] access - Hit PUT /api/api/hotel/undefined
+[2018-11-13T08:11:04.065] [INFO] startUpLogger - Server Now with Logger on PORT :3000
+[2018-11-13T08:11:04.067] [INFO] startUpLogger - Server Now WIth Logger on http://127.0.0.1:3000
+[2018-11-13T09:18:12.115] [INFO] startUpLogger - Server Now with Logger on PORT :3000
+[2018-11-13T09:18:12.116] [INFO] startUpLogger - Server Now WIth Logger on http://127.0.0.1:3000
+[2018-11-13T10:24:29.085] [INFO] startUpLogger - Server Now with Logger on PORT :3000
+[2018-11-13T10:24:29.086] [INFO] startUpLogger - Server Now WIth Logger on http://127.0.0.1:3000
+[2018-11-13T10:46:40.145] [INFO] startUpLogger - Server Now with Logger on PORT :3000
+[2018-11-13T10:46:40.147] [INFO] startUpLogger - Server Now WIth Logger on http://127.0.0.1:3000
+[2018-11-13T10:51:29.758] [INFO] access - Hit GET /api/users
+[2018-11-13T10:52:21.170] [INFO] access - Hit POST /api/users/new

@@ -18,7 +18,7 @@ var accesslog = log4js.getLogger('access')
 app.use(function(req,res,next){
    
     res.header("Access-Control-Allow-Origin","*");
-    res.header("Access-Control-Allow-Headers","Origin,X-Requested-With, Content-Type,x-access-token, Accept");
+    res.header("Access-Control-Allow-Headers","Origin,X-Requested-With, Content-Type,x-access-token,x-access-token, Accept");
     next();
     });
 // try{

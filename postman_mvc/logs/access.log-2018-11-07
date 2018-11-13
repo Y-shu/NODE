@@ -1,0 +1,6 @@
+[2018-11-07T11:38:31.643] [INFO] http - 127.0.0.1 - - "GET /api/api/hotels HTTP/1.1" 200 3447 "" "PostmanRuntime/7.3.0"
+[2018-11-07T11:39:29.069] [ERROR] http - 127.0.0.1 - - "GET /api/api/hotel HTTP/1.1" 404 152 "" "PostmanRuntime/7.3.0"
+[2018-11-07T11:39:35.327] [ERROR] http - 127.0.0.1 - - "GET /api/hotel HTTP/1.1" 404 148 "" "PostmanRuntime/7.3.0"
+[2018-11-07T11:41:39.716] [ERROR] http - 127.0.0.1 - - "GET /api/hotel/ HTTP/1.1" 404 149 "" "PostmanRuntime/7.3.0"
+[2018-11-07T11:42:21.969] [ERROR] http - 127.0.0.1 - - "GET /api/hotel/5bbe301a0e724013721e4608 HTTP/1.1" 404 173 "" "PostmanRuntime/7.3.0"
+[2018-11-07T11:42:31.941] [INFO] http - 127.0.0.1 - - "GET /api/api/hotel/5bbe301a0e724013721e4608 HTTP/1.1" 200 4 "" "PostmanRuntime/7.3.0"
