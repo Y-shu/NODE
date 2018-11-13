@@ -1,10 +1,5 @@
-[2018-11-13T08:11:04.065] [INFO] startUpLogger - Server Now with Logger on PORT :3000
-[2018-11-13T08:11:04.067] [INFO] startUpLogger - Server Now WIth Logger on http://127.0.0.1:3000
-[2018-11-13T09:18:12.115] [INFO] startUpLogger - Server Now with Logger on PORT :3000
-[2018-11-13T09:18:12.116] [INFO] startUpLogger - Server Now WIth Logger on http://127.0.0.1:3000
-[2018-11-13T10:24:29.085] [INFO] startUpLogger - Server Now with Logger on PORT :3000
-[2018-11-13T10:24:29.086] [INFO] startUpLogger - Server Now WIth Logger on http://127.0.0.1:3000
-[2018-11-13T10:46:40.145] [INFO] startUpLogger - Server Now with Logger on PORT :3000
-[2018-11-13T10:46:40.147] [INFO] startUpLogger - Server Now WIth Logger on http://127.0.0.1:3000
-[2018-11-13T10:51:29.758] [INFO] access - Hit GET /api/users
-[2018-11-13T10:52:21.170] [INFO] access - Hit POST /api/users/new
+[2018-11-13T13:43:47.837] [INFO] startUpLogger - Server Now WIth Logger on http://127.0.0.1:3000
+[2018-11-13T13:43:59.116] [INFO] startUpLogger - Server Now with Logger on PORT :3000
+[2018-11-13T13:43:59.117] [INFO] startUpLogger - Server Now WIth Logger on http://127.0.0.1:3000
+[2018-11-13T13:44:32.994] [INFO] startUpLogger - Server Now with Logger on PORT :3000
+[2018-11-13T13:44:32.995] [INFO] startUpLogger - Server Now WIth Logger on http://127.0.0.1:3000

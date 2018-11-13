@@ -1,4 +1,5 @@
-require('../model/db.con')
+//establising mongoose connection
+require('../model/db.con');
 const mongoose = require('mongoose');
 //model object internally search for mongoose connection...
 var User=mongoose.model('User');
@@ -70,30 +71,49 @@ module.exports.addOneUser = (req, res, next) => {
           });
   }
 }
-module.exports.getOneUser = (req, res, next) => {
-  var userId = req.params.userId;
-  console.log(req.params.userId);
-  if (req.params && req.params.userId) {        
-      User
-      .findById(userId)
-      .exec(function (error, user) {
-              if (error) {
-                  res
-                      .status(404)
-                      .json({
-                          message: "User Records Not Found",
-                          error: error
-                      });
-              } else {
-                  res
-                      .status(200)
-                      .json(user);
-              }
-          });
-  } else {
-      res
-          .status(404)
-          .json({ message: "Request Params UserId  is Not In Url" })
-  }
+// module.exports.getOneUser = (req, res, next) => {
+//   var userId = req.params.userId;
+//   console.log(req.params.userId);
+//   if (req.params && req.params.userId) {        
+//       User
+//       .findById(userId)
+//       .exec(function (error, user) {
+//               if (error) {
+//                   res
+//                       .status(404)
+//                       .json({
+//                           message: "User Records Not Found",
+//                           error: error
+//                       });
+//               } else {
+//                   res
+//                       .status(200)
+//                       .json(user);
+                     
+                      
+//               }
+//           });
+          
+          
+//   } else {
+//       res
+//           .status(404)
+//           .json({ message: "Request Params UserId  is Not In Url" })
+//   }
 
-}
+// }
+module.exports.getOneUser = (req,res,next) =>{
+    var userId = req.params.userId;
+    console.log(userId);
+    if(userId){
+      var user = userData[userId];
+      console.log(user);
+      res.status(200)
+      .json(user);
+    }
+    else{
+      res.status(200)
+      .json({message:"User Id not Found"});
+  
+    }
+  }

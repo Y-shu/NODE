@@ -3,7 +3,7 @@
 const mongoose = require('mongoose');
 //model object internally search for mongoose connection...
 var Hotel = mongoose.model('Hotel');
-// var User = mongoose.model('User');
+var User = mongoose.model('User');
 
 // const CONFIG = require('../config')
 
@@ -251,8 +251,8 @@ module.exports.showbookedHotel =async (req,res,next) =>{
   console.log(req.params.userId);
   if(req.params && req.params.userId){
     User
-    .findById(userId)
-    .select('bookHistory')
+    .findById(userId) 
+    .select('bookHotel')
     .exec(function(error,hotels){
       if(error){
         res.status(500)
