@@ -5,13 +5,15 @@ const CONFIG = require('./mvc/config');
 
 var express = require('express');//requiring express
 var app = express();
-app.use(bodyParser.urlencoded({ extended:false }));
-app.use(bodyParser.json({type:'application/json'}));
+
 
 
 var path = require('path');//requiring path
 const fs=require('fs');//requiring fileSystem
 var bodyParser=require('body-parser');//requiring bodyParser
+
+/*body-parser is a piece of express middleware that reads a form's
+ input and stores it as a javascript object accessible through req.body */
 
 //Routes
 const hotelRoutes = require('./mvc/router/hotel.routes');//hotel-routes
@@ -38,6 +40,9 @@ app.use(function(req,res,next){
         
 //     }
 // }
+app.use(bodyParser.urlencoded({ extended:false }));
+app.use(bodyParser.json({type:'application/json'}));
+
 app.use(express.static(path.join(__dirname,'public')));
 app.use(log4js.connectLogger(log4js.getLogger('http'),{level:'auto'}))
 app.use(function(req,res,next){
@@ -48,15 +53,12 @@ app.use(function(req,res,next){
     app.use('/api',userRoutes);
     app.use('/api/api',hotelRoutes);
     
-    console.log("Bro my Server is Running!");
+    console.log("Bro My Server is Running!");
 
-    //Asking our sever to listen on this particular port
+    //Asking our sever to listen on this particular port and host
 app.listen(CONFIG.PORT,CONFIG.HOST,function(){
     // console.log("Bro Server is Running on http://127.0.0.1:" +CONFIG.PORT);
     startUpLog.info('Server Now with Logger on PORT :'+CONFIG.PORT);
     startUpLog.info('Server Now WIth Logger on http://127.0.0.1:'+CONFIG.PORT);
 });
 
-
-/*body-parser is a piece of express middleware that reads a form's
- input and stores it as a javascript object accessible through req.body */

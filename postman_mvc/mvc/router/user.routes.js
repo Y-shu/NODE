@@ -13,8 +13,8 @@ router
 .post(userLogic.addOneUser);
 
 router
-.route('/user/showHotels/:userId')
-.get(hotelLogic.showbookedHotel);
+.route('/user/showHotels/:userId/:hotelId')
+.get(hotelLogic.bookHotel);
 
 router
 .route('/user/register')

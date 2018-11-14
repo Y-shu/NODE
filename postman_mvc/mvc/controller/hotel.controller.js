@@ -5,14 +5,16 @@ const mongoose = require('mongoose');
 var Hotel = mongoose.model('Hotel');
 var User = mongoose.model('User');
 
-// const CONFIG = require('../config')
+const log4js = require("log4js");
+var errorLogger = log4js.getLogger("errorFile");
+var accessLogger = log4js.getLogger("access");
+let hotelsLogger = log4js.getLogger("hotels");
 
 var ObjectId = require('mongodb').ObjectId;
 //getting hotels data
 module.exports.getAllHotels = (req,res,next)=>{
   var offset = 0;
-  var count = 4;
-  console.log(req.query);
+  var count = 5;
   if(req.query &&req.query.offset){
     offset=parseInt(req.query.offset,10);
   }
@@ -23,83 +25,74 @@ module.exports.getAllHotels = (req,res,next)=>{
 
   Hotel
   .find()
-  .skip(offset)
-  .limit(count)
+  // .skip(offset)
+  // .limit(count)
   .exec((error,hotels)=>{
     if(error){
-      console.log(error);
       res
       .status(404)
       .json({
         message:"Hotel Record Not Found!",
         error:error
       });
+      errorLogger.error("Hotels Record Not Found");
       }else{
        res
        .status(200)
-       .json(hotels)
+       .json(hotels);
+       accessLogger.info("Hotel Records Found!");
        }
-  })
+  });
 
-}
+};
 
-// //Here for one hotel with the help of hotelId.index is passed with param./hotel/index
+//Here for one hotel with the help of hotelId.index is passed with param./hotel/index
 module.exports.getOneHotel = (req,res,next) =>{
-
-  var hotelId = req.params.hotelId;
-  console.log(req.params);
-  
-  console.log(hotelId);
-  if(req.params && req.params.hotelId){
-    Hotel
-    .findById(hotelId)
-    .exec(function(error,hotel){
-      if(error){
+if(req.params && req.params.hotelId){
+Hotel
+     .findById({_id:req.params.hotelId})
+     .exec(function(error,hotel){
+  if(error){
+  console.log(error);
         res
         .status(404)
         .json({
-          message:"Hotel Record Not Found",
+          message:"Requested Hotel Record Not Found",
           error:error
         });
+errorLogger.error("Requested Hotel Record Not Found")
       }else{
         res
         .status(200)
         .json(hotel)
+accessLogger.info("Requested Hotel Found!")
       }
-      
     });
-
-  }
-  else{
+}else{
     res
     .status(404)
     .json({
-      message:"Requested Params HotelId Not Found!",
+      message:"Requested Params does not contain any HotelId to search for!!",
     });
+errorLogger.error("Requested Params does not contain any HotelId to search for!!");
   }
-}
+};
 
-//Adding new hotel with request body.
+ //Adding new hotel with request body.
 module.exports.addOneHotel = (req,res,next) =>{
-  //var hotel = req.body;
-
-    //Hotel.create(req.body,function(err,doc))
 //two methods to insert into db.here in backend we have also given some field as required
 //and we are also given 3 fiels required.,nd in schema we alse have given some fields required.
-    console.log("Add One Hotels Post");
-    console.log(req.body);
-    
-
-if(req.body && req.body.name && req.body.stars && req.body.description){
+if(req.body && req.body.name && req.body.stars && req.body.address){
+//   //Object to store values obtained...
       var newhotel = new Hotel({
         name:req.body.name,
         stars:req.body.stars,
         'location.address':req.body.address,
-        currency:req.body.currency,
-        services:req.body.services
+        services:req.body.services,
+        "rooms":[{price:req.body.price}]
       });
-      newhotel
-      .save(function(error,response){
+    newhotel
+       .save((error,response)=>{
       if(error){
       res
       .status(500)
@@ -107,275 +100,173 @@ if(req.body && req.body.name && req.body.stars && req.body.description){
         message:"Internal Server Error!",
         error:error
       });
+errorLogger.error("Internal Server Error!")
     }else{
         res.status(200)
-        .json(response)
+        .json(response);
+      hotelsLogger.info("Hotel Added Successfully!");
       }
-  })
-}
-// }else{
-//     res
-//     .status(200)
-//     .json({
-//       message : "Required fields for creating hotel is missing!"
-//     });
-//   }
-}
-
-//update hotel name or whole data or nested data.
-module.exports.updateOneHotel = (req,res,next) =>{
-  try{
-    console.log("Update One Hotel");
-   var hotelId = req.params.hotelId;
-  var updateQuery ={$push :{"reviews":req.body.reviews} }
-  //findByIdAndUpdate is default method
-  Hotel
-    .findByIdAndUpdate(hotelId,updateQuery,function(error,response){
-      if(error) throw error;
+  });
+}else{
     res
     .status(200)
     .json({
-      message:"Update successfully",
-      response:"Ok"
+      message : "Required Fields are not passed in request body!"
     });
-
-    });
-  }catch(error){
-    res
-    .status(500)
-    .json({
-      message:"Error While Updating hotel!"
-    });
+errorLogger.error("Required Fields are not passed in request body!");
   }
-  
-}
-
-
-
-// //getting reviews
-module.exports.allReviewsForHotel = (req,res,next) =>{
-
-  var hotelId = req.params.hotelId;
-  console.log(hotelId);
-  if(req.params && req.params.hotelId &&req.params.reviews){
-    Hotel
-    .findById(hotelId)
-    .select('reviews')
-    .exec(function(error,reviews){
-      if(error){
-        res
-        .status(404)
-        .json({
-          message:"Hotel records Not Found",
-          error:error
-        });
-      }else{
-      res
-      .status(200)
-      .json(reviews.review);
-      }
-    });
-}else{
-    res
-    .status(404)
-    .json({
-      message:"Request Params HotelId is Not in Url"
-    });
-   }
-}
-
-// review by review id
-module.exports.OneReviewForHotel = (req,res,next) =>{
-  var hotelId = req.params.hotelId;
-  var reviewId = req.params.reviewId;
-  console.log(hotelId);
-  if(req.params&&req.params.hotelId&&req.params.reviewId){
-    Hotel
-    .findById(hotelId)
-    .select('reviews')
-    .exec(function(error,reviews){
-      if(error){
-        res
-        .status(404)
-        .json({
-          message:"Hotel Record Not Found",
-          error:error
-        })
-      }else{
-      //for nested levels reviews-->reviewsId
-      //.id method is only for _id field(nested field)  
-      var review = reviews.reviews.id(reviewId);
-      res
-      .status(200)
-      .json(reviews);
-      }
-    });
-   }else{
-    res.status(200)
-    .json({
-      message:"Request Params Hotel Id is Not in Url"
-    });
-
-  }
-
-}
-
-//delete review by review id.
-module.exports.deleteReview = (req,res,next) =>{
-  var hotelId = req.params.hotelId;
-  var reviewId = req.params.reviewId;
-
-  console.log(hotelId);
-    if(hotelId){
-      Hotel
-      .findById(hotelId)
-      .select('reviews')
-      .exec(function(err,reviewsHotel){
-        if(err){
-          res.status(400).json({message:"Review Id Not Found"})
-        }
-        var review = reviewsHotel.reviews.id(reviewId);
-        res.status(200)
-        .json(review);
-      })
-
-    }
-  else{
-    res.status(200)
-    .json({message:"Hotel Id not Found"});
-
-  }
-}
-module.exports.showbookedHotel =async (req,res,next) =>{
-  var userId = req.params.userId;
-  console.log(req.params.userId);
-  if(req.params && req.params.userId){
-    User
-    .findById(userId) 
-    .select('bookHotel')
-    .exec(function(error,hotels){
-      if(error){
-        res.status(500)
-        .json({
-          message:"Internal Server Error",
-          error:error
-        });
-      }else{
-        res.status(200).json(hotels);
-      }
-    });
-  }else{
-    res.status(404)
-    .json({message:"Request params UserId Not Found"})
-  }
-}
-
- //book hotel
-module.exports.bookHotel =async (req,res,next) =>{
-  try{
-   
-
-    var hotelId = req.params.hotelId;
-    var userId = req.params.userId;
-    findOneHotelOneUser(hotelId,userId).then((data)=>{
-      // console.log(data);
-    // res.status(200).json(data);
-    //$push means appending data
-    var bookHotelHistory = {$push:{'bookHistroy':[
-      {
-        name:data.hotel.name,
-        hotelId:data.hotel._id,
-        price:data.hotel.rooms[0].price,
-        bookingDate:new Date(),
-        checkIn:new Date(),
-        checkOut:new Date()
-  
-      }
-    ]}}
-    if(data.user._id){
-      User.findByIdAndUpdate(userId,bookHotelHistory,
-        function(err,doc){
-        if(err){
-          res
-          .set('application/json')
-          .status(500).json({
-            error:err,
-            message:"Booking is not completed Due to Server Error"
-          })
-        }else{
-          res
-          .status(200)
-          .json({
-            response:true,
-            message:"Booking Completed!"
-          })
-        }
-      })
-    }else{
-      res
-      .status(404)
-      .json({
-        
-        message:"For Booking user not Found!"
-      });
-    }
- });
-  }catch(error){
- res
- .status(500)
- .json(error)
-  }
- }
-//for parallel query we are using async
-  async function findOneHotelOneUser(hotelId,userId){
-      if(!hotelId){
-        throw new Error("Hotel Id Not Found");
-      }
-if(!userId){
-          throw new Error("User Id Not Found");
-        }
-    var hotel = await Hotel.findById(hotelId);
-    var user = await User.findById(userId);
-
-    return {
-  hotel:hotel,
-  user:user
 };
+
+//update hotel name or whole data or nested data.
+module.exports.updateOneHotel = (req,res,next) =>{
+var hotelId = req.params.hotelId;
+let updateQuery = {
+  $set:{
+    "name":req.body.name
+  }
+};
+Hotel
+.findByIdAndUpdate(hotelId,updateQuery,function(error,response){
+if(error){
+  res
+  .status(404)
+  .json({
+    message:"The hotel document update FAILED",
+    error:error
+  });
+  errorLogger.error("The hotel document update FAILED");
+}else{
+  res
+  .status(200)
+  .json({
+    message:"The hotel document is updated successfully!"
+  });
+  hotelsLogger.info("The hotel document is updated successfully");
+}
+});
+};
+
+//getting reviews
+module.exports.allReviewsForHotel = (req, res, next) => {
+  let hotelId = req.params.hotelId;
+  if (req.params && req.params.hotelId) {
+      Hotel.findById(hotelId)
+          .select('reviews')
+          .exec((err, reviews) => {
+              if (err) {
+                  res
+                      .status(404)
+                      .json({
+                          message: "Hotel Records Not Found",
+                          error: err
+                      });
+              } else {
+                  res
+                      .status(200)
+                      .json(reviews);
+              }
+          })
+  } else {
+      res
+          .status(404)
+          .json({
+              message: "Request Params HotelId is Not In Url"
+          })
+  }
+}
+// review by review id
+module.exports.OneReviewForHotel = (req, res, next) => {
+  let hotelId = req.params.hotelId;
+  let reviewId = req.params.reviewId;
+  if (req.params && req.params.hotelId && req.params.reviewId) {
+      Hotel
+          .findById(hotelId)
+          .select('reviews') //for projecting reviews only
+          .exec(function(error, reviews) {
+              if (error) {
+                  res
+                      .status(404)
+                      .json({
+                          message: "Hotel Records Not Found",
+                          error: error
+                      });
+              } else {
+                  var review = reviews.reviews.id(reviewId)
+                  res
+                      .status(200)
+                      .json(review);
+              }
+          });
+  } else {
+      res
+          .status(404)
+          .json({
+              message: "Request Params HotelId is Not In Url"
+          })
+  }
 }
 
+//book hotel
+module.exports.bookHotel = (req, res, next) => {
+  try {
+      let userId = req.params.userId;
+      console.log(userId);
+      let hotelId = req.params.hotelId;
+      console.log(hotelId);
+      findOneHotelOneUser(hotelId, userId).then((data) => {
+          console.log(data)
+          let bookHotelHistory = {
+              $push: {
+                  'bookhistory': [{
+                      hotelName: data.hotel.name,
+                      hotelId: data.hotel._id,
+                      price: data.hotel.rooms.price,
+                      bookingDate: new Date(),
+                      checkIn: new Date(),
+                      checkOut: new Date(),
 
+                  }]
+              }
+          }
+          if (data.user._id) {
+              User.findByIdAndUpdate(userId, bookHotelHistory, (err, doc) => {
+                  if (err) {
+                      res.set('application/json')
+                          .status(500)
+                          .json({
+                              error: err,
+                              message: "Booking Is not Completed Due to Server Error"
+                          })
+                  } else {
+                      res.status(200)
+                          .json({
+                              response: true,
+                              message: "Booking Completed !"
+                          })
+                  }
+              })
+          } else {
+              res.status(404).json({
+                  message: "For Booking User Not Found!"
+              });
+          }
+      })
+  } catch (err) {
+      res.status(500).json(error)
+  }
+}
 
-
-
-
-// //adding new reviews with help of find and update menthod
-// module.exports.addHotelReviews = (req,res,next) =>{
-//   var hotelId = req.params.hotelId;
-//   console.log(hotelId);
-//   getReviews(hotelId).then((reviews)=>{
-//     var newR = reviews.reviews.push(req.body);
-//    var newReview = {$set:{'reviews':reviews.reviews}}
-// //  if(hotelId){
-//     //if we want to change only name of review.nested document
-//     //"review.0.name":"req.body.name"
-// //    var newReview = {$set:{'reviews':[req.body]}}
-//     Hotel.findByIdAndUpdate(hotelId,newReview,function(err,doc){
-//       if(err){
-//         res.status(500).json({message:"Reviews Not Added"})
-//       }
-//       res.status(200)
-//       .json(doc);
-//     })
-// })
-//   //}
-
-// }
-// }  //for parallel query we are using async
-//   async function getReviews(hotelId){
-//       if(!hotelId){
-//         throw new Error("Hotel Id Not Found");
-//       }
-//     var reviewobj = await Hotel.findById(hotelId).select("reviews");
-//     return reviewobj;
-//   }
-
+async function findOneHotelOneUser(hotelId, userId) {
+  if (!hotelId) {
+      throw new Error("Hotel Id Is Not Found")
+  }
+  if (!userId) {
+      throw new Error("UserId Is Not Found")
+  }
+  var hotel = await Hotel.findById(hotelId);
+  var user = await User.findById(userId);
+  return {
+      hotel: hotel,
+      user: user
+  };
+}

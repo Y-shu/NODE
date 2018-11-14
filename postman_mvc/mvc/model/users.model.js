@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
 var hotelbookSchema=mongoose.Schema({
-        name:String,
         hotelId:String,
+        hotelName:String,
+        hotelAddress:String,
         //as of now time will be taken Date.now
         bookingDate:Date,
         price:Number,
@@ -27,7 +28,10 @@ var usersSchema = mongoose.Schema({
         lastLogin:Date,
         bookhistory:[hotelbookSchema],
         //authentication purpose
-        password:String
+        password:{
+                type:String,
+                required:true
+        }
 
 });
 mongoose.model('User',usersSchema,'user');

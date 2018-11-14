@@ -1,9 +1,12 @@
 const express = require('express');
 const router = express.Router();
 const hotelLogic = require('../controller/hotel.controller');
-const userLogic = require('../controller/users.controller');
+// const userLogic = require('../controller/users.controller');
 const authLogic= require('../controller/auth.controller');
 
+router
+.route('/showBookedHotel/:userId')
+.get(authLogic.tokenValidator,hotelLogic.bookHotel);
 
 router
 .route('/bookhotel/:hotelId/:userId')
@@ -19,7 +22,7 @@ router.route('/hotels')
 router
 .route('/hotel/:hotelId')
 .get(hotelLogic.getOneHotel)
-.delete(hotelLogic.deleteReview)
+// .delete(hotelLogic.deleteReview)
 .put(hotelLogic.updateOneHotel)
 
 
