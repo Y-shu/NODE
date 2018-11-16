@@ -77,7 +77,7 @@ module.exports.tokenValidator=(req,res,next)=>{
     }
 }
 module.exports.registration=(req,res,next)=>{
-    if(!req.body && req.body.name && req.body.email && req.body.password && req.body.phoneNumber){
+    if(req.body && req.body.name && req.body.email && req.body.password && req.body.phoneNumber){
         var saltRounds = 10;
         //generating salt value-random generated value is called salt this gets attached with password
         //saltvalue encrypts password
@@ -87,8 +87,8 @@ module.exports.registration=(req,res,next)=>{
           var newUser = new User({
               name:req.body.name,
               email:req.body.email,
-              password:req.body.password,
-              phone:req.body.phoneNumber,
+              password:hashPassword,
+              phoneNumber:req.body.phoneNumber,
               role:req.body.role
           });
           newUser.save(function(err,user){
@@ -151,7 +151,7 @@ module.exports.login =(req,res,next)=>{
                             auth:false
                         });
                     }else{
-                    var token  = jwt.sign({_id:user._id},CONFIG.SCRTKEY,{expiresIn:43200})
+                    var token  = jwt.sign({_id:user._id},CONFIG.SECRETKEY,{expiresIn:43200})
                         res
                         .status(200)
                         .json({

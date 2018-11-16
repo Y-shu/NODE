@@ -1,2 +1,5 @@
-[2018-11-14T16:56:12.220] [INFO] startUpLogger - Server Now with Logger on PORT :3000
-[2018-11-14T16:56:12.222] [INFO] startUpLogger - Server Now WIth Logger on http://127.0.0.1:3000
+[2018-11-16T12:14:44.731] [INFO] access - Requested Hotel Found!
+[2018-11-16T12:48:14.365] [INFO] access - Hit OPTIONS /api/user/login
+[2018-11-16T12:48:14.374] [INFO] access - Hit POST /api/user/login
+[2018-11-16T12:48:50.481] [INFO] access - Hit OPTIONS /api/user/login
+[2018-11-16T12:48:50.487] [INFO] access - Hit POST /api/user/login

@@ -720,3 +720,150 @@
 [2018-11-14T16:56:06.463] [INFO] startUpLogger - Server Now WIth Logger on http://127.0.0.1:3000
 [2018-11-14T16:56:12.220] [INFO] startUpLogger - Server Now with Logger on PORT :3000
 [2018-11-14T16:56:12.222] [INFO] startUpLogger - Server Now WIth Logger on http://127.0.0.1:3000
+[2018-11-15T12:04:33.037] [INFO] startUpLogger - Server Now with Logger on PORT :3000
+[2018-11-15T12:04:33.040] [INFO] startUpLogger - Server Now WIth Logger on http://127.0.0.1:3000
+[2018-11-15T12:16:25.857] [INFO] startUpLogger - Server Now with Logger on PORT :3000
+[2018-11-15T12:16:25.858] [INFO] startUpLogger - Server Now WIth Logger on http://127.0.0.1:3000
+[2018-11-16T10:05:36.182] [INFO] startUpLogger - Server Now with Logger on PORT :3000
+[2018-11-16T10:05:36.183] [INFO] startUpLogger - Server Now WIth Logger on http://127.0.0.1:3000
+[2018-11-16T10:20:45.602] [INFO] access - Hit POST /api/user/register
+[2018-11-16T10:20:45.614] [ERROR] error - Failed To Register a User, Required Fields are missing!
+[2018-11-16T10:21:14.848] [INFO] access - Hit POST /api/user/register
+[2018-11-16T10:21:14.850] [ERROR] error - Failed To Register a User, Required Fields are missing!
+[2018-11-16T10:21:35.651] [INFO] access - Hit POST /api/user/register
+[2018-11-16T10:21:35.653] [ERROR] error - Failed To Register a User, Required Fields are missing!
+[2018-11-16T10:22:05.638] [INFO] startUpLogger - Server Now with Logger on PORT :3000
+[2018-11-16T10:22:05.639] [INFO] startUpLogger - Server Now WIth Logger on http://127.0.0.1:3000
+[2018-11-16T10:22:24.856] [INFO] access - Hit POST /api/user/register
+[2018-11-16T10:22:24.862] [ERROR] error - Failed To Register a User, Required Fields are missing!
+[2018-11-16T10:24:18.214] [INFO] startUpLogger - Server Now with Logger on PORT :3000
+[2018-11-16T10:24:18.215] [INFO] startUpLogger - Server Now WIth Logger on http://127.0.0.1:3000
+[2018-11-16T10:24:21.416] [INFO] access - Hit POST /api/user/register
+[2018-11-16T10:24:21.428] [ERROR] error - Failed To Register a User, Required Fields are missing!
+[2018-11-16T10:24:29.706] [INFO] startUpLogger - Server Now with Logger on PORT :3000
+[2018-11-16T10:24:29.707] [INFO] startUpLogger - Server Now WIth Logger on http://127.0.0.1:3000
+[2018-11-16T10:26:26.189] [INFO] startUpLogger - Server Now with Logger on PORT :3000
+[2018-11-16T10:26:26.190] [INFO] startUpLogger - Server Now WIth Logger on http://127.0.0.1:3000
+[2018-11-16T10:26:30.112] [INFO] access - Hit POST /api/user/register
+[2018-11-16T10:26:30.571] [INFO] users - User is registered successfully with Token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YmVlNGRmZWQ1MTIwYjNkNDBmYmMzNmQiLCJpYXQiOjE1NDIzNDQxOTAsImV4cCI6MTU0MjM4NzM5MH0.JRFlphEzpIdj_gyvVELFvCJ-fpSQHPQrm7LMB8aPdUk
+[2018-11-16T10:29:15.066] [INFO] access - Hit OPTIONS /api/user/register
+[2018-11-16T10:29:15.096] [INFO] access - Hit POST /api/user/register
+[2018-11-16T10:29:15.616] [INFO] users - User is registered successfully with Token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YmVlNGVhM2Q1MTIwYjNkNDBmYmMzNmUiLCJpYXQiOjE1NDIzNDQzNTUsImV4cCI6MTU0MjM4NzU1NX0.WQhRp9VEl0yA7VLvyTUDYfpB0ZVDzooouwhLLlXUNyY
+[2018-11-16T10:29:15.646] [INFO] access - Hit OPTIONS /api/api/hotels
+[2018-11-16T10:29:15.656] [INFO] access - Hit GET /api/api/hotels
+[2018-11-16T10:29:16.693] [INFO] access - Hotel Records Found!
+[2018-11-16T10:31:05.267] [INFO] access - Hit OPTIONS /api/api/hotels
+[2018-11-16T10:31:05.280] [INFO] access - Hit GET /api/api/hotels
+[2018-11-16T10:31:06.501] [INFO] access - Hotel Records Found!
+[2018-11-16T10:31:31.174] [INFO] access - Hit OPTIONS /api/user/login
+[2018-11-16T10:31:31.187] [INFO] access - Hit POST /api/user/login
+[2018-11-16T10:32:01.599] [INFO] access - Hit OPTIONS /api/user/register
+[2018-11-16T10:32:01.612] [INFO] access - Hit POST /api/user/register
+[2018-11-16T10:32:03.557] [INFO] users - User is registered successfully with Token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YmVlNGY0OWQ1MTIwYjNkNDBmYmMzOTUiLCJpYXQiOjE1NDIzNDQ1MjMsImV4cCI6MTU0MjM4NzcyM30.oVzgZu_VyLqQ0-h91gHU_3uKp1MMpjmEEijhz-zGgME
+[2018-11-16T10:32:03.596] [INFO] access - Hit OPTIONS /api/api/hotels
+[2018-11-16T10:32:03.608] [INFO] access - Hit GET /api/api/hotels
+[2018-11-16T10:32:06.351] [INFO] access - Hotel Records Found!
+[2018-11-16T10:32:18.642] [INFO] access - Hit OPTIONS /api/user/login
+[2018-11-16T10:32:18.654] [INFO] access - Hit POST /api/user/login
+[2018-11-16T10:32:51.460] [INFO] access - Hit OPTIONS /api/user/login
+[2018-11-16T10:32:51.473] [INFO] access - Hit POST /api/user/login
+[2018-11-16T10:38:32.612] [INFO] access - Hit POST /api/users
+[2018-11-16T10:38:39.969] [INFO] access - Hit GET /api/users
+[2018-11-16T10:45:03.208] [INFO] startUpLogger - Server Now with Logger on PORT :3000
+[2018-11-16T10:45:03.209] [INFO] startUpLogger - Server Now WIth Logger on http://127.0.0.1:3000
+[2018-11-16T10:45:11.962] [INFO] access - Hit GET /api/users
+[2018-11-16T10:47:53.873] [INFO] startUpLogger - Server Now with Logger on PORT :3000
+[2018-11-16T10:47:53.874] [INFO] startUpLogger - Server Now WIth Logger on http://127.0.0.1:3000
+[2018-11-16T10:47:58.069] [INFO] startUpLogger - Server Now with Logger on PORT :3000
+[2018-11-16T10:47:58.070] [INFO] startUpLogger - Server Now WIth Logger on http://127.0.0.1:3000
+[2018-11-16T10:48:04.717] [INFO] startUpLogger - Server Now with Logger on PORT :3000
+[2018-11-16T10:48:04.719] [INFO] startUpLogger - Server Now WIth Logger on http://127.0.0.1:3000
+[2018-11-16T10:48:09.917] [INFO] access - Hit GET /api/users
+[2018-11-16T10:49:13.787] [INFO] startUpLogger - Server Now with Logger on PORT :3000
+[2018-11-16T10:49:13.789] [INFO] startUpLogger - Server Now WIth Logger on http://127.0.0.1:3000
+[2018-11-16T10:49:59.422] [INFO] startUpLogger - Server Now with Logger on PORT :3000
+[2018-11-16T10:49:59.424] [INFO] startUpLogger - Server Now WIth Logger on http://127.0.0.1:3000
+[2018-11-16T10:50:22.822] [INFO] access - Hit POST /api/user/register
+[2018-11-16T10:50:23.327] [INFO] users - User is registered successfully with Token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YmVlNTM5NzExNjhiYzFjMjAxZWMyOTMiLCJpYXQiOjE1NDIzNDU2MjMsImV4cCI6MTU0MjM4ODgyM30.eV3nI_O1xMTle299zPc_pEP7wkJI1ZLWvHppIdp9ADU
+[2018-11-16T10:50:42.944] [INFO] access - Hit GET /api/users
+[2018-11-16T10:51:11.424] [INFO] access - Hit OPTIONS /api/user/login
+[2018-11-16T10:51:11.453] [INFO] access - Hit POST /api/user/login
+[2018-11-16T10:56:07.284] [INFO] startUpLogger - Server Now with Logger on PORT :3000
+[2018-11-16T10:56:07.285] [INFO] startUpLogger - Server Now WIth Logger on http://127.0.0.1:3000
+[2018-11-16T11:00:00.808] [INFO] access - Hit OPTIONS /api/user/login
+[2018-11-16T11:00:00.864] [INFO] access - Hit POST /api/user/login
+[2018-11-16T11:26:36.224] [INFO] startUpLogger - Server Now with Logger on PORT :3000
+[2018-11-16T11:26:36.226] [INFO] startUpLogger - Server Now WIth Logger on http://127.0.0.1:3000
+[2018-11-16T11:26:39.738] [INFO] access - Hit POST /api/user/login
+[2018-11-16T11:26:41.509] [INFO] users - User is registered with token  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YmVlNTM5NzExNjhiYzFjMjAxZWMyOTMiLCJpYXQiOjE1NDIzNDc4MDEsImV4cCI6MTU0MjM5MTAwMX0.cBvfg_14_JrRetzYLc05CFsuaigGyZzNLhLl7olevfM
+[2018-11-16T11:27:04.652] [INFO] access - Hit OPTIONS /api/user/login
+[2018-11-16T11:27:04.675] [INFO] access - Hit POST /api/user/login
+[2018-11-16T11:27:23.990] [INFO] access - Hit OPTIONS /api/user/login
+[2018-11-16T11:27:24.005] [INFO] access - Hit POST /api/user/login
+[2018-11-16T11:27:49.819] [INFO] access - Hit OPTIONS /api/user/login
+[2018-11-16T11:27:49.836] [INFO] access - Hit POST /api/user/login
+[2018-11-16T11:28:12.863] [INFO] access - Hit OPTIONS /api/user/login
+[2018-11-16T11:28:12.896] [INFO] access - Hit POST /api/user/login
+[2018-11-16T11:28:20.621] [INFO] access - Hit OPTIONS /api/user/login
+[2018-11-16T11:28:20.637] [INFO] access - Hit POST /api/user/login
+[2018-11-16T11:28:36.329] [INFO] access - Hit OPTIONS /api/user/login
+[2018-11-16T11:28:36.346] [INFO] access - Hit POST /api/user/login
+[2018-11-16T11:28:37.050] [INFO] users - User is registered with token  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YmVlNTM5NzExNjhiYzFjMjAxZWMyOTMiLCJpYXQiOjE1NDIzNDc5MTcsImV4cCI6MTU0MjM5MTExN30.wrnVYKaYOntPz3bxJEevjSR3jBo_6QQeFYc-qLyh6eo
+[2018-11-16T11:28:37.153] [INFO] access - Hit OPTIONS /api/api/hotels
+[2018-11-16T11:28:37.169] [INFO] access - Hit GET /api/api/hotels
+[2018-11-16T11:28:37.829] [INFO] access - Hotel Records Found!
+[2018-11-16T11:35:13.953] [INFO] access - Hit GET /api/users
+[2018-11-16T12:06:06.107] [INFO] access - Hit OPTIONS /api/user/register
+[2018-11-16T12:06:06.122] [INFO] access - Hit POST /api/user/register
+[2018-11-16T12:06:06.387] [ERROR] error - Failed to Register a User..Intenal Server Error!
+[2018-11-16T12:06:13.656] [INFO] access - Hit OPTIONS /api/user/register
+[2018-11-16T12:06:13.669] [INFO] access - Hit POST /api/user/register
+[2018-11-16T12:06:13.890] [ERROR] error - Failed to Register a User..Intenal Server Error!
+[2018-11-16T12:07:11.519] [INFO] access - Hit OPTIONS /api/user/register
+[2018-11-16T12:07:11.539] [INFO] access - Hit POST /api/user/register
+[2018-11-16T12:07:11.783] [ERROR] error - Failed to Register a User..Intenal Server Error!
+[2018-11-16T12:11:06.118] [INFO] startUpLogger - Server Now with Logger on PORT :3000
+[2018-11-16T12:11:06.119] [INFO] startUpLogger - Server Now WIth Logger on http://127.0.0.1:3000
+[2018-11-16T12:11:55.504] [INFO] access - Hit OPTIONS /api/user/login
+[2018-11-16T12:11:55.528] [INFO] access - Hit POST /api/user/login
+[2018-11-16T12:12:51.994] [INFO] access - Hit OPTIONS /api/user/register
+[2018-11-16T12:12:52.005] [INFO] access - Hit POST /api/user/register
+[2018-11-16T12:12:52.334] [INFO] users - User is registered successfully with Token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YmVlNjZlY2ZmM2Q2ZjNmNWM0MjBjYTEiLCJpYXQiOjE1NDIzNTA1NzIsImV4cCI6MTU0MjM5Mzc3Mn0.d-Q4NQgQwQ55rzAbNpBDLYC4TgF-GmeHaWKw8XjGt9M
+[2018-11-16T12:12:52.361] [INFO] access - Hit OPTIONS /api/api/hotels
+[2018-11-16T12:12:52.374] [INFO] access - Hit GET /api/api/hotels
+[2018-11-16T12:12:52.848] [INFO] access - Hotel Records Found!
+[2018-11-16T12:13:00.764] [INFO] access - Hit OPTIONS /api/api/hotel
+[2018-11-16T12:13:01.832] [INFO] access - Hit OPTIONS /api/api/hotel
+[2018-11-16T12:13:02.814] [INFO] access - Hit OPTIONS /api/api/hotel
+[2018-11-16T12:13:04.143] [INFO] access - Hit OPTIONS /api/api/hotel
+[2018-11-16T12:13:09.424] [INFO] access - Hit OPTIONS /api/api/hotel
+[2018-11-16T12:13:14.124] [INFO] access - Hit OPTIONS /api/api/hotels
+[2018-11-16T12:13:14.132] [INFO] access - Hit GET /api/api/hotels
+[2018-11-16T12:13:14.584] [INFO] access - Hotel Records Found!
+[2018-11-16T12:13:24.435] [INFO] access - Hit OPTIONS /api/api/hotel
+[2018-11-16T12:13:26.117] [INFO] access - Hit OPTIONS /api/api/hotel
+[2018-11-16T12:13:30.202] [INFO] access - Hit OPTIONS /api/api/hotels
+[2018-11-16T12:13:30.210] [INFO] access - Hit GET /api/api/hotels
+[2018-11-16T12:13:30.675] [INFO] access - Hotel Records Found!
+[2018-11-16T12:13:42.528] [INFO] access - Hit OPTIONS /api/user/login
+[2018-11-16T12:13:42.532] [INFO] access - Hit POST /api/user/login
+[2018-11-16T12:13:42.828] [INFO] users - User is registered with token  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YmVlNjZlY2ZmM2Q2ZjNmNWM0MjBjYTEiLCJpYXQiOjE1NDIzNTA2MjIsImV4cCI6MTU0MjM5MzgyMn0.SXvIK04lHIjm5XlTcPZO9HiN2iwxZlSSp0eN1TtWFtQ
+[2018-11-16T12:13:42.839] [INFO] access - Hit OPTIONS /api/api/hotels
+[2018-11-16T12:13:42.844] [INFO] access - Hit GET /api/api/hotels
+[2018-11-16T12:13:44.656] [INFO] access - Hotel Records Found!
+[2018-11-16T12:14:07.739] [INFO] access - Hit OPTIONS /api/api/hotel/5bc1a70336683822ac7e11a7
+[2018-11-16T12:14:07.748] [INFO] access - Hit GET /api/api/hotel/5bc1a70336683822ac7e11a7
+[2018-11-16T12:14:07.980] [INFO] access - Requested Hotel Found!
+[2018-11-16T12:14:39.636] [INFO] access - Hit OPTIONS /api/user/login
+[2018-11-16T12:14:39.644] [INFO] access - Hit POST /api/user/login
+[2018-11-16T12:14:39.987] [INFO] users - User is registered with token  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YmVlNjZlY2ZmM2Q2ZjNmNWM0MjBjYTEiLCJpYXQiOjE1NDIzNTA2NzksImV4cCI6MTU0MjM5Mzg3OX0.aNGZX_0a7FlDhloHbNM16RF-Ll_xnw4Q0juscHCK-7Y
+[2018-11-16T12:14:40.002] [INFO] access - Hit OPTIONS /api/api/hotels
+[2018-11-16T12:14:40.009] [INFO] access - Hit GET /api/api/hotels
+[2018-11-16T12:14:40.548] [INFO] access - Hotel Records Found!
+[2018-11-16T12:14:44.462] [INFO] access - Hit OPTIONS /api/api/hotel/5bea97223dc87d47ac6b0987
+[2018-11-16T12:14:44.470] [INFO] access - Hit GET /api/api/hotel/5bea97223dc87d47ac6b0987
+[2018-11-16T12:14:44.731] [INFO] access - Requested Hotel Found!
+[2018-11-16T12:48:14.365] [INFO] access - Hit OPTIONS /api/user/login
+[2018-11-16T12:48:14.374] [INFO] access - Hit POST /api/user/login
+[2018-11-16T12:48:50.481] [INFO] access - Hit OPTIONS /api/user/login
+[2018-11-16T12:48:50.487] [INFO] access - Hit POST /api/user/login

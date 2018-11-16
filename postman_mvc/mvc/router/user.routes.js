@@ -1,16 +1,16 @@
 const express = require('express');
 const router = express.Router();
-const userLogic = require('../controller/users.controller')
 const hotelLogic = require('../controller/hotel.controller')
+const userLogic = require('../controller/users.controller')
 const authLogic = require('../controller/auth.controller')
 
 router
 .route('/users')
 .get(userLogic.getUsers);
 
-router
-.route('/user/new')
-.post(userLogic.addOneUser);
+// router
+// .route('/user/new')
+// .post(userLogic.addOneUser);
 
 router
 .route('/user/showHotels/:userId/:hotelId')

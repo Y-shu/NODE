@@ -17,8 +17,8 @@ module.exports.getUsers =(req,res,next)=> {
     }
   User
   .find()
-  .skip(offset)
-  .limit(count)
+//   .skip(offset)
+//   .limit(count)
   .exec((error,users)=>{
     if(error){
       console.log(error);
