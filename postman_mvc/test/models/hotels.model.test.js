@@ -1,10 +1,12 @@
 var chai = require('chai');
+var assert = chai.assert;
 var expect = chai.expect;
+var should = chai.should();
+//Importing Model
 var Hotel=require('../../mvc/model/hotels.model');
 
 describe('Hotels Model Happy Test Flow!',()=>{
-            //generating hotel object for model
-
+    //generating hotel object for model
     var hotel = new Hotel({
         name:"Hotel Grand Casino",
         stars:5,
@@ -16,7 +18,7 @@ describe('Hotels Model Happy Test Flow!',()=>{
             review:"Costly",
             rating:5
         }]
-
+    
    });
         it('Test For Hotel Model Data',()=>{
                 expect(hotel).to.have.property('name').to.equal('Hotel Grand Casino');

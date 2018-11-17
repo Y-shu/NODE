@@ -104,18 +104,20 @@ errorLogger.error("Internal Server Error!")
     }else{
         res.status(200)
         .json(response);
-      hotelsLogger.info("Hotel Added Successfully!");
+    //   hotelsLogger.info("Hotel Added Successfully!");
       }
   });
-}else{
-    res
-    .status(200)
-    .json({
-      message : "Required Fields are not passed in request body!"
-    });
-errorLogger.error("Required Fields are not passed in request body!");
-  }
-};
+}
+}
+//else{
+//     res
+//     .status(200)
+//     .json({
+//       message : "Required Fields are not passed in request body!"
+//     });
+// errorLogger.error("Required Fields are not passed in request body!");
+//   }
+// };
 
 //update hotel name or whole data or nested data.
 module.exports.updateOneHotel = (req,res,next) =>{
@@ -255,6 +257,7 @@ module.exports.bookHotel = (req, res, next) => {
       res.status(500).json(error)
   }
 }
+
 
 async function findOneHotelOneUser(hotelId, userId) {
   if (!hotelId) {

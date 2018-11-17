@@ -14,7 +14,7 @@
 //         photos:[String],
 //         price:Number
 //     }]
-// })
+// });
 // ---------------------------------------------------------------------------------------
 //creating schema for hotel.json
 const mongoose = require('mongoose');
