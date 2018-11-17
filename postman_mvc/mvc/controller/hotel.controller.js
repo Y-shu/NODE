@@ -109,15 +109,7 @@ errorLogger.error("Internal Server Error!")
   });
 }
 }
-//else{
-//     res
-//     .status(200)
-//     .json({
-//       message : "Required Fields are not passed in request body!"
-//     });
-// errorLogger.error("Required Fields are not passed in request body!");
-//   }
-// };
+
 
 //update hotel name or whole data or nested data.
 module.exports.updateOneHotel = (req,res,next) =>{

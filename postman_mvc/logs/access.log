@@ -32,3 +32,4 @@
 [2018-11-17T12:26:58.719] [INFO] http - 127.0.0.1 - - "POST /api/api/hotel/new HTTP/1.1" 200 61 "" "node-superagent/3.8.3"
 [2018-11-17T12:27:05.866] [INFO] http - 127.0.0.1 - - "GET /api/api/hotels HTTP/1.1" 200 28677 "" "node-superagent/3.8.3"
 [2018-11-17T12:36:46.614] [INFO] http - 127.0.0.1 - - "GET /api/api/hotel/5bbd3b3519f31d285e560691 HTTP/1.1" 200 1596 "" "node-superagent/3.8.3"
+[2018-11-17T12:53:42.705] [INFO] http - 127.0.0.1 - - "GET /api/api/hotels HTTP/1.1" 200 28677 "" "node-superagent/3.8.3"

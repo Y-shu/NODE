@@ -1032,3 +1032,12 @@
 [2018-11-17T12:36:20.169] [INFO] access - Hit POST /api/api/hotel/new
 [2018-11-17T12:36:20.172] [INFO] access - Hit PUT /api/api/hotel/5bbd3b3519f31d285e560691
 [2018-11-17T12:36:46.612] [INFO] access - Requested Hotel Found!
+[2018-11-17T12:52:35.570] [INFO] startUpLogger - Server Now with Logger on PORT :3000
+[2018-11-17T12:52:35.572] [INFO] startUpLogger - Server Now WIth Logger on http://127.0.0.1:3000
+[2018-11-17T12:53:40.419] [INFO] startUpLogger - Server Now with Logger on PORT :3000
+[2018-11-17T12:53:40.421] [INFO] startUpLogger - Server Now WIth Logger on http://127.0.0.1:3000
+[2018-11-17T12:53:40.453] [INFO] access - Hit GET /api/api/hotels
+[2018-11-17T12:53:40.497] [INFO] access - Hit GET /api/api/hotel/5bbd3b3519f31d285e560691
+[2018-11-17T12:53:40.534] [INFO] access - Hit POST /api/api/hotel/new
+[2018-11-17T12:53:40.539] [INFO] access - Hit PUT /api/api/hotel/5bbd3b3519f31d285e560691
+[2018-11-17T12:53:42.701] [INFO] access - Hotel Records Found!
